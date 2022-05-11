@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: monochrome_tilemap_transparent_36
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: -2083820156, guid: 69b5c4371bafdfe4d8fd82f3877ff6f1, type: 3}
-  m_Color: {r: 0.009658807, g: 0.5943396, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
     e01: 0

@@ -77,6 +77,9 @@ GameObject:
   - component: {fileID: 3606720832518649881}
   - component: {fileID: 3606720832518649882}
   - component: {fileID: 6485378136572451433}
+  - component: {fileID: 5742282789276571445}
+  - component: {fileID: 4347223295444431854}
+  - component: {fileID: 4776125369876938117}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -141,7 +144,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 350052559, guid: 69b5c4371bafdfe4d8fd82f3877ff6f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -168,8 +171,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
-  m_Material: {fileID: 0}
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: d42abe2045ddff14ea00611fbeb48735, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -213,10 +216,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 4
-  JumpForce: 10
+  JumpForce: 12
+  TerminalVelocity: 12
+  JumpBufferTime: 0.1
   GroundCornerTopLeft: {fileID: 3606720830828693223}
   GroundCornerBottomRight: {fileID: 3606720831894854117}
-  JumpSound: {fileID: 0}
+  JumpSound: {fileID: 8300000, guid: 3c2ef54954e06d44c9962939615f2341, type: 3}
 --- !u!114 &3606720832518649882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,9 +234,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dfa59d385ee1f547b86db39fb3f48ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spawn: {fileID: 0}
-  <Health>k__BackingField: 0
-  DeathSound: {fileID: 0}
+  MaxHealth: 3
+  InvulnerabilityTime: 0.75
+  <HasKey>k__BackingField: 0
+  <Secrets>k__BackingField: 0
+  HurtSound: {fileID: 8300000, guid: 5692e38ee620c90419ba1fc4b1efc306, type: 3}
+  DeathSound: {fileID: 8300000, guid: e9d6e5757a66c0045864bff831f1f0fe, type: 3}
+  WinSound: {fileID: 8300000, guid: bcd0e267326b6144eaa81a585854018c, type: 3}
 --- !u!82 &6485378136572451433
 AudioSource:
   m_ObjectHideFlags: 0
@@ -328,3 +337,48 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &5742282789276571445
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3606720832518649875}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c823b68eda616244ab6392974db6fc13, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4347223295444431854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3606720832518649875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 635c593c33d0d114fac64d6481a92463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4776125369876938117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3606720832518649875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd41da6afd4726a4bb05e95a2de465b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Disabled: 0
