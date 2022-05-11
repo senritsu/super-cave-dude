@@ -93,10 +93,8 @@ public class Player : MonoBehaviour
     private IEnumerator VictoryCelebration()
     {
         _audioSource.PlayOneShot(WinSound);
-
-        yield return new WaitForSeconds(3);
         
-        BackToMenu();
+        yield return null;
     }
     
     private void OnTriggerEnter2D(Collider2D col)

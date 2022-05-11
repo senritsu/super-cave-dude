@@ -4,10 +4,12 @@ public class TreasureChest : MonoBehaviour
 {
     private Animator _animator;
     private static readonly int Open = Animator.StringToHash("Open");
+    private ParticleSystem _particleSystem;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _particleSystem = GetComponent<ParticleSystem>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -17,5 +19,6 @@ public class TreasureChest : MonoBehaviour
         if (!player) return;
 
         _animator.SetTrigger(Open);
+        _particleSystem.Play();
     }
 }

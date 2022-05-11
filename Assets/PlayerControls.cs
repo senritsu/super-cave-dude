@@ -9,11 +9,14 @@ public class PlayerControls : MonoBehaviour
     
     public Transform GroundCornerTopLeft;
     public Transform GroundCornerBottomRight;
+    public ParticleSystem LaunchParticles;
+    public ParticleSystem LandingParticles;
 
     private float _direction;
     private double _remainingJumpBuffer;
 
     public AudioClip JumpSound;
+    public AudioSource LandingSound;
     private AudioSource _audioSource;
     
     private bool _isJumping;
@@ -56,13 +59,16 @@ public class PlayerControls : MonoBehaviour
     {        
         _remainingJumpBuffer = 0;
         _isJumping = true;
-        _audioSource.PlayOneShot(JumpSound, 1);
+        _audioSource.PlayOneShot(JumpSound, 0.5f);
+        LaunchParticles.Play();
     }
 
     private void LandOnGround()
     {
         _isJumping = false;
         _betterJump.Enable();
+        LandingSound.Play();
+        LandingParticles.Play();
     }
 
     private void UpdateAnimator()

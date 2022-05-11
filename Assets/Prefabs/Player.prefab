@@ -221,7 +221,10 @@ MonoBehaviour:
   JumpBufferTime: 0.1
   GroundCornerTopLeft: {fileID: 3606720830828693223}
   GroundCornerBottomRight: {fileID: 3606720831894854117}
+  LaunchParticles: {fileID: 0}
+  LandingParticles: {fileID: 0}
   JumpSound: {fileID: 8300000, guid: 3c2ef54954e06d44c9962939615f2341, type: 3}
+  LandingSound: {fileID: 0}
 --- !u!114 &3606720832518649882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +256,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.811
   m_Pitch: 1
   Loop: 0
   Mute: 0
