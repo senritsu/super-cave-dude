@@ -47,6 +47,11 @@ public class Player : MonoBehaviour
                 _animator.SetBool(IsInvulnerableHash, false);
             }
         }
+
+        if (Input.GetButtonDown("Cancel"))
+        {
+            BackToMenu();
+        }
     }
 
     private IEnumerator Die()
@@ -56,13 +61,12 @@ public class Player : MonoBehaviour
         
         yield return new WaitForSeconds(2);
 
-        ReloadScene();
+        BackToMenu();
     }
 
-    private void ReloadScene()
+    private void BackToMenu()
     {
-        var scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.buildIndex);
+        SceneManager.LoadScene(0);
     }
 
     public void Damage(int damage)
@@ -92,7 +96,7 @@ public class Player : MonoBehaviour
 
         yield return new WaitForSeconds(3);
         
-        ReloadScene();
+        BackToMenu();
     }
     
     private void OnTriggerEnter2D(Collider2D col)
